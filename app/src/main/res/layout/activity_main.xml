@@ -36,7 +36,7 @@
             android:layout_height="wrap_content"
             android:text="om gupta"
             android:textSize="50dp"
-            android:textColor="#FFC107"
+            android:textColor="#9C27B0"
             android:layout_below="@+id/search"/>
 
 
