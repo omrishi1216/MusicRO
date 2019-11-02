@@ -5,6 +5,5 @@
     android:background="#FF5722"
     android:elevation="4dp"
     android:orientation="vertical">
-    >
 
 </Toolbar>
