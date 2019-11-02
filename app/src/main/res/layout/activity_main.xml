@@ -9,6 +9,14 @@
     android:background="#ED000000">
 
 
+    <ImageView
+        android:id="@+id/file"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/music_img" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -31,25 +39,18 @@
 
         </SearchView>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="om gupta"
-            android:textSize="50dp"
-            android:textColor="#9C27B0"
-            android:layout_below="@+id/search"/>
+        <ListView
+            android:id="@+id/musiclist"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            ></ListView>
 
 
     </LinearLayout>
 
 
-    <ImageView
-        android:id="@+id/file"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:src="@drawable/music_img" />
+
 
 
 
