@@ -8,11 +8,6 @@
     android:orientation="vertical"
     android:background="#ED000000">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=""
-        android:textColor="#ffffff"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -22,18 +17,28 @@
 
         <include
             android:id="@+id/toolbar"
-            layout="@layout/bar"
+            layout="@layout/toolbar"
             ></include>
 
 
 
         <SearchView
+            android:id="@+id/search"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#ffffff"
             android:layout_centerInParent="true">
 
         </SearchView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="om"
+            android:textSize="50dp"
+            android:textColor="#FFC107"
+            android:layout_below="@+id/search"/>
+
 
     </LinearLayout>
 
