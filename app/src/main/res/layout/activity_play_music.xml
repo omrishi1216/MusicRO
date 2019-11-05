@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#ffffff"
@@ -11,19 +9,20 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="8"
+        android:layout_weight="10"
         android:background="#FFFFFF"
         android:gravity="center"
         android:orientation="vertical">
 
         <ImageView
-            android:layout_marginTop="50dp"
+            android:id="@+id/album_art"
             android:layout_width="300dp"
             android:layout_height="300dp"
-            android:src="@drawable/cd"
-             />
+            android:layout_marginTop="50dp"
+            android:src="@drawable/cd" />
 
         <TextView
+            android:id="@+id/song_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
@@ -34,11 +33,9 @@
 
 
             android:text="Song Name"
-            android:textColor="#000000"
             android:textAlignment="center"
+            android:textColor="#000000"
             android:textSize="30dp" />
-
-
 
 
         <RelativeLayout
@@ -51,26 +48,25 @@
                 android:layout_width="320dp"
                 android:layout_height="3dp"
                 android:layout_centerHorizontal="true"
-                android:layout_marginBottom="20dp"
                 android:layout_marginTop="30dp"
-                android:background="#CF0D0D"/>
+                android:layout_marginBottom="20dp"
+                android:background="#CF0D0D" />
 
             <Button
                 android:id="@+id/pause"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="0dp"
                 android:layout_below="@+id/seekbar"
-                android:background="@drawable/ic_pause_black_24dp" />
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/pauseround" />
 
 
             <Button
                 android:id="@+id/previous"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:layout_marginTop="10dp"
                 android:layout_below="@+id/seekbar"
+                android:layout_marginTop="10dp"
                 android:layout_toRightOf="@+id/pause"
                 android:background="@drawable/ic_skip_next_black_24dp" />
 
@@ -79,11 +75,11 @@
                 android:id="@+id/next"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:layout_centerHorizontal="true"
                 android:layout_below="@+id/seekbar"
+                android:layout_centerHorizontal="true"
                 android:layout_marginTop="10dp"
                 android:layout_toLeftOf="@+id/pause"
-                android:background= "@drawable/ic_skip_previous_black_24dp"/>
+                android:background="@drawable/ic_skip_previous_black_24dp" />
 
 
         </RelativeLayout>
