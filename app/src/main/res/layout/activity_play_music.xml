@@ -21,6 +21,7 @@
             android:layout_width="300dp"
             android:layout_height="300dp"
             android:src="@drawable/cd"
+            android:id="@+id/album_art"
              />
 
         <TextView
@@ -28,13 +29,13 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
             android:ellipsize="marquee"
+            android:id="@+id/song_name"
             android:marqueeRepeatLimit="marquee_forever"
             android:scrollHorizontally="true"
             android:singleLine="true"
 
-
             android:text="Song Name"
-            android:textColor="#9EFFFFFF"
+            android:textColor="#9E000000"
             android:textAlignment="center"
             android:textSize="30dp" />
 

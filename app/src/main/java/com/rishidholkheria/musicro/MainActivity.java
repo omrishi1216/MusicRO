@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.Manifest;
 import android.app.ActivityManager;
+import android.app.PendingIntent;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.media.MediaPlayer;
 import android.os.Build;
@@ -13,6 +15,7 @@ import android.os.Environment;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -27,7 +30,12 @@ import java.util.List;
 import java.io.IOException;
 import java.util.zip.Inflater;
 
+import static android.app.PendingIntent.getActivity;
+
 public class MainActivity extends AppCompatActivity {
+
+    public static boolean check_play = true;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,20 +47,22 @@ public class MainActivity extends AppCompatActivity {
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setActionBar(toolbar);
+        final MediaPlayer song = MediaPlayer.create(MainActivity.this, R.raw.song1);
 
-        play.setOnClickListener(new View.OnClickListener() {
+        play.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                MediaPlayer song = MediaPlayer.create(MainActivity.this, R.raw.song1);
-                song.start();
+                if(song.isPlaying()){
+
+                }else{
+                    song.start();
+                    check_play = true;
+                }
+
+                startActivity(new Intent(getApplicationContext(), play_music.class));
             }
         });
-
-
-
-
     }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
