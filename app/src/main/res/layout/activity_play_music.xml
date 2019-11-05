@@ -4,25 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#000000"
-
+    android:background="#ffffff"
     android:orientation="vertical"
-    android:weightSum="10"
-    tools:context=".play_music">
+    android:weightSum="10">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="7"
-        android:background="#000000"
+        android:layout_weight="8"
+        android:background="#FFFFFF"
         android:gravity="center"
         android:orientation="vertical">
 
         <ImageView
+            android:layout_marginTop="50dp"
             android:layout_width="300dp"
             android:layout_height="300dp"
-            android:background="#F5512A"
-            android:src="@drawable/music1" />
+            android:src="@drawable/cd"
+             />
 
         <TextView
             android:layout_width="match_parent"
@@ -35,15 +34,11 @@
 
 
             android:text="Song Name"
+            android:textColor="#9EFFFFFF"
             android:textAlignment="center"
             android:textSize="30dp" />
 
-    </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:weightSum="3">
 
 
         <RelativeLayout
@@ -56,12 +51,14 @@
                 android:layout_width="320dp"
                 android:layout_height="3dp"
                 android:layout_centerHorizontal="true"
-                android:layout_marginBottom="20dp" />
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="30dp"
+                android:background="#CF0D0D"/>
 
             <Button
                 android:id="@+id/pause"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="0dp"
                 android:layout_below="@+id/seekbar"
@@ -72,7 +69,7 @@
                 android:id="@+id/previous"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:layout_marginTop="0dp"
+                android:layout_marginTop="10dp"
                 android:layout_below="@+id/seekbar"
                 android:layout_toRightOf="@+id/pause"
                 android:background="@drawable/ic_skip_next_black_24dp" />
@@ -84,7 +81,7 @@
                 android:layout_height="50dp"
                 android:layout_centerHorizontal="true"
                 android:layout_below="@+id/seekbar"
-                android:layout_marginTop="0dp"
+                android:layout_marginTop="10dp"
                 android:layout_toLeftOf="@+id/pause"
                 android:background= "@drawable/ic_skip_previous_black_24dp"/>
 
