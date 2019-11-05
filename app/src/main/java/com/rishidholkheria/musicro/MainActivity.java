@@ -19,6 +19,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ListView;
@@ -42,11 +43,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
-
-        final MediaPlayer song = MediaPlayer.create(MainActivity.this, R.raw.song1);
-
 
     }
     @Override
@@ -115,7 +111,19 @@ public class MainActivity extends AppCompatActivity {
         addMusicFilesFrom(String.valueOf(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_MUSIC)));
         addMusicFilesFrom(String.valueOf(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)));
     }
+    song_info info;
 
+    private void playMusicFile(String path){
+
+
+        try{
+            info.mp.setDataSource(path);
+            info.mp.prepare();
+            info.mp.start();
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+    }
     @Override
     protected void onResume() {
         super.onResume();
@@ -132,6 +140,23 @@ public class MainActivity extends AppCompatActivity {
            fillMusicList();
            textAdapter.setData(musicFilesList);
            musiclist.setAdapter(textAdapter);
+           musiclist.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+               @Override
+               public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                   if(info.mp.isPlaying()){
+                       info.mp.pause();
+                   }
+                   final String musicFilePath = musicFilesList.get(position);
+                   playMusicFile(musicFilePath);
+
+                   Intent i = new Intent(getApplicationContext(),play_music.class);
+                   i.putExtra("file_path",musicFilePath);
+                   startActivity(i);
+
+
+               }
+           });
 
            isMusicPlayerInit = true;
        }

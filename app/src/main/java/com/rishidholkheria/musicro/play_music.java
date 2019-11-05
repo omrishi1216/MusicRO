@@ -23,17 +23,18 @@ public class play_music extends AppCompatActivity {
         setContentView(R.layout.activity_play_music);
 
         Intent i = getIntent();
-        final MediaPlayer s = i.getParcelableExtra("check");
+        final String file_path = i.getStringExtra("file_path");
+
         final Button pause = (Button) findViewById(R.id.pause);
         TextView song_name = (TextView) findViewById(R.id.song_name);
         ImageView album_art = (ImageView) findViewById(R.id.album_art);
 
-       /* byte art[];
+        byte art[];
 
         MediaMetadataRetriever mmr = new MediaMetadataRetriever();
-        mmr.setDataSource("/Desktop/song1.mp3");
+        mmr.setDataSource(file_path);
         try {
-            song_name.setText(mmr.extractMetadata(MediaMetadataRetriever.METADATA_KEY_ALBUM));
+            song_name.setText(mmr.extractMetadata(MediaMetadataRetriever.METADATA_KEY_TITLE));
             art = mmr.getEmbeddedPicture();
             Bitmap albumart = BitmapFactory.decodeByteArray(art,0,art.length);
             album_art.setImageBitmap(albumart);
@@ -43,10 +44,10 @@ public class play_music extends AppCompatActivity {
             song_name.setText("Unknown Name");
         }
 
-        */
 
-        //final MediaPlayer s = MediaPlayer.create(play_music.this,R.raw.song1);
-        pause.setOnClickListener(new View.OnClickListener() {
+
+
+/*          pause.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(MainActivity.check_play){
@@ -59,6 +60,6 @@ public class play_music extends AppCompatActivity {
             }
         });
 
-
+*/
     }
 }
