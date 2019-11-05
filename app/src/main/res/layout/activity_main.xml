@@ -6,16 +6,10 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:orientation="vertical"
+    android:id="@+id/layout"
     android:background="#BF000000">
 
 
-    <ImageView
-        android:id="@+id/file"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:src="@drawable/music_img" />
 
     <LinearLayout
         android:layout_width="match_parent"
