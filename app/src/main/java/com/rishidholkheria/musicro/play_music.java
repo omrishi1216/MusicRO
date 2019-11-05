@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toolbar;
 
 public class play_music extends AppCompatActivity {
 
@@ -47,10 +48,10 @@ public class play_music extends AppCompatActivity {
             public void onClick(View v) {
                 if(MainActivity.check_play){
                     s.pause();
-                    pause.setBackgroundResource(R.drawable.ic_launcher_foreground);
+                    pause.setBackgroundResource(R.drawable.ic_play_circle_filled_black_24dp);
                 }else{
                     s.start();
-                    pause.setBackgroundResource(R.drawable.ic_pause_black_24dp);
+                    pause.setBackgroundResource(R.drawable.ic_pause_circle_filled_black_24dp);
                 }
             }
         });

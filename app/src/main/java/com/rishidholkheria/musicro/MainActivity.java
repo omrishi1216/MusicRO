@@ -45,15 +45,16 @@ public class MainActivity extends AppCompatActivity {
         Button play = (Button) findViewById(R.id.play);
 
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setActionBar(toolbar);
         final MediaPlayer song = MediaPlayer.create(MainActivity.this, R.raw.song1);
 
         play.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
                 if(song.isPlaying()){
-
+                    song.stop();
+                    if(!song.isPlaying()){
+                        song.start();
+                    }
                 }else{
                     song.start();
                     check_play = true;

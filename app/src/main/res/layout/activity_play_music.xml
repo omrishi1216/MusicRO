@@ -6,6 +6,8 @@
     android:orientation="vertical"
     android:weightSum="10">
 
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -58,7 +60,7 @@
                 android:layout_height="70dp"
                 android:layout_below="@+id/seekbar"
                 android:layout_centerHorizontal="true"
-                android:background="@drawable/pauseround" />
+                android:background="@drawable/ic_pause_circle_filled_black_24dp" />
 
 
             <Button
