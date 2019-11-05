@@ -111,15 +111,15 @@ public class MainActivity extends AppCompatActivity {
         addMusicFilesFrom(String.valueOf(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_MUSIC)));
         addMusicFilesFrom(String.valueOf(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)));
     }
-    song_info info;
 
+    final MediaPlayer mp = new MediaPlayer();
     private void playMusicFile(String path){
 
 
         try{
-            info.mp.setDataSource(path);
-            info.mp.prepare();
-            info.mp.start();
+            mp.setDataSource(path);
+            mp.prepare();
+            mp.start();
         }catch(Exception e){
             e.printStackTrace();
         }
@@ -144,8 +144,8 @@ public class MainActivity extends AppCompatActivity {
                @Override
                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                   if(info.mp.isPlaying()){
-                       info.mp.pause();
+                   if(mp.isPlaying()){
+                       mp.pause();
                    }
                    final String musicFilePath = musicFilesList.get(position);
                    playMusicFile(musicFilePath);
