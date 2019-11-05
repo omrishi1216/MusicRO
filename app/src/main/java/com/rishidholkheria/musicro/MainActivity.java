@@ -12,6 +12,7 @@ import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -59,10 +60,12 @@ public class MainActivity extends AppCompatActivity {
                     song.start();
                     check_play = true;
                 }
-
-                startActivity(new Intent(getApplicationContext(), play_music.class));
+                Intent i = new Intent(getApplicationContext(),play_music.class);
+                i.putExtra("check", (Parcelable) song);
+                startActivity(i);
             }
         });
+
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -92,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
         return false;
     }
 
-/*    @Override
+  @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
 
@@ -200,5 +203,5 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
-*/
+
 }

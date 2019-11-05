@@ -1,6 +1,8 @@
 package com.rishidholkheria.musicro;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
@@ -20,7 +22,8 @@ public class play_music extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_play_music);
 
-
+        Intent i = getIntent();
+        final MediaPlayer s = i.getParcelableExtra("check");
         final Button pause = (Button) findViewById(R.id.pause);
         TextView song_name = (TextView) findViewById(R.id.song_name);
         ImageView album_art = (ImageView) findViewById(R.id.album_art);
@@ -42,7 +45,7 @@ public class play_music extends AppCompatActivity {
 
         */
 
-        final MediaPlayer s = MediaPlayer.create(play_music.this,R.raw.song1);
+        //final MediaPlayer s = MediaPlayer.create(play_music.this,R.raw.song1);
         pause.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
