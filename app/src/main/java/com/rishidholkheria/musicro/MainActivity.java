@@ -43,28 +43,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button play = (Button) findViewById(R.id.play);
 
 
         final MediaPlayer song = MediaPlayer.create(MainActivity.this, R.raw.song1);
 
-        play.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                if(song.isPlaying()){
-                    song.stop();
-                    if(!song.isPlaying()){
-                        song.start();
-                    }
-                }else{
-                    song.start();
-                    check_play = true;
-                }
-                Intent i = new Intent(getApplicationContext(),play_music.class);
-                i.putExtra("check", (Parcelable) song);
-                startActivity(i);
-            }
-        });
 
     }
     @Override
