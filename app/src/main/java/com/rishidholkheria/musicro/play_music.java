@@ -20,7 +20,7 @@ import java.util.Random;
 
 
 public class play_music extends AppCompatActivity {
-    int songPosition = 0;
+    int songPosition = 00;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
