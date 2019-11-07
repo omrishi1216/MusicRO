@@ -27,7 +27,8 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="15dp">
+            android:padding="15dp"
+            android:id="@+id/rl1">
 
             <TextView
                 android:id="@+id/song_name"
@@ -60,13 +61,16 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:id="@+id/rl2">
 
                 <TextView
                     android:id="@+id/current_position"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:layout_marginTop="100dp"
                     android:layout_weight="1"
                     android:textColor="#ffffff"></TextView>
 
@@ -74,7 +78,10 @@
                     android:id="@+id/song_duration"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="#ffffff"></TextView>
+                    android:textColor="#ffffff"
+                    android:gravity="right"
+                    android:layout_marginTop="100dp"></TextView>
+
             </LinearLayout>
 
             <SeekBar
