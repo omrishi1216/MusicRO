@@ -30,7 +30,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
             android:ellipsize="marquee"
-            android:marqueeRepeatLimit="marquee_forever"
+            android:marqueeRepeatLimit="2"
             android:scrollHorizontally="true"
             android:singleLine="true"
             android:text="Song Name"
@@ -38,20 +38,53 @@
             android:textColor="#ffffff"
             android:textSize="30dp" />
 
+        <TextView
+            android:id="@+id/artist_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:ellipsize="marquee"
+            android:marqueeRepeatLimit="2"
+            android:scrollHorizontally="true"
+            android:singleLine="true"
+            android:text="Artist Name"
+            android:textAlignment="center"
+            android:textColor="#BBB9B9"
+            android:textSize="25dp" />
+
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:padding="15dp">
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textColor="#ffffff"
+                    android:id="@+id/current_position"></TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#ffffff"
+                    android:id="@+id/song_duration"></TextView>
+            </LinearLayout>
             <SeekBar
                 android:id="@+id/seekbar"
-                android:layout_width="320dp"
-                android:layout_height="3dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="30dp"
                 android:layout_marginBottom="20dp"
-                android:background="#CF0D0D" />
+                android:background="#ffffff" />
 
             <Button
                 android:id="@+id/pause"

@@ -40,9 +40,6 @@ import static android.app.PendingIntent.getActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-    public static boolean check_play = true;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,22 +48,22 @@ public class MainActivity extends AppCompatActivity {
         RelativeLayout relativeLayout = (RelativeLayout) findViewById(R.id.layout);
 
         String [] color1 = {
-                "#89216B",
-                "#3c1053",
-                "#4b134f",
-                "#642B73",
-                "#45a247",
-                "#8e44ad"
+                "#FF006C",
+                "#00FF83",
+                "#B6FF00",
+                "#FF8700",
+                "#0CDF69",
+                "#0CB9DF"
 
         };
         String [] color2 = {
 
-                "#DA4453",
-                "#ad5389",
-                "#C6426E",
-                "#159957",
-                "#1CB5E0",
-                "#1CB5E0"
+                "#36FF33",
+                "#FFF633",
+                "#FF3333",
+                "#0CDFA6",
+                "#0C56DF",
+                "#DF0C7C"
 
         };
         Random r = new Random();
@@ -141,22 +138,10 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-      private void fillMusicList(){
+    private void fillMusicList(){
         musicFilesList.clear();
         addMusicFilesFrom(String.valueOf(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_MUSIC)));
         addMusicFilesFrom(String.valueOf(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)));
-    }
-
-    final MediaPlayer mp = new MediaPlayer();
-    private void playMusicFile(String path){
-
-        try{
-            mp.setDataSource(path);
-            mp.prepare();
-            mp.start();
-        }catch(Exception e){
-            e.printStackTrace();
-        }
     }
     @Override
     protected void onResume() {
@@ -178,11 +163,7 @@ public class MainActivity extends AppCompatActivity {
                @Override
                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                   if(mp.isPlaying()){
-                       mp.pause();
-                   }
                    final String musicFilePath = musicFilesList.get(position);
-                   playMusicFile(musicFilePath);
 
                    Intent i = new Intent(getApplicationContext(),play_music.class);
                    i.putExtra("file_path",musicFilePath);
