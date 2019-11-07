@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="10"
-        android:background="#BF000000"
+        android:background="@drawable/background3"
         android:gravity="center"
         android:orientation="vertical">
 
@@ -51,7 +51,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="30dp"
                 android:layout_marginBottom="20dp"
-                android:background="#CF0D0D" />
+                android:background="#FFEB3B" />
 
             <Button
                 android:id="@+id/pause"
