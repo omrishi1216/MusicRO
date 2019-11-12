@@ -226,7 +226,7 @@ public class play_music extends AppCompatActivity {
         builder.setContentTitle(song_name.getText().toString());
         builder.setSmallIcon(R.drawable.notification_icon)
                 .setOnlyAlertOnce(true);
-        //builder.setContent(notificationView);
+        builder.setContent(notificationView);
         builder.addAction(R.id.notification_pause, "play/pause", null);
         builder.setDefaults(Notification.FLAG_NO_CLEAR)
                 .setDefaults(Notification.BADGE_ICON_SMALL)
