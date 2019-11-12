@@ -2,14 +2,23 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="160dp"
-    android:background="#ffffff"
+    android:background="#ADD0F5"
     android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        >
+
+
+
+    </LinearLayout>
 
 
     <ImageView
         android:id="@+id/notimg"
         android:layout_width="100dp"
-        android:layout_height="125dp"
+        android:layout_height="match_parent"
         android:layout_marginVertical="10dp"
         android:layout_marginLeft="10dp"
         android:padding="8dp"
@@ -26,45 +35,52 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="70dp"
+            android:id="@+id/song_name"
             android:layout_marginLeft="20dp"
-            android:hint="singer name"
             android:marqueeRepeatLimit="marquee_forever"
-            android:text="Song Name"
-            android:textColor="#9F000000"
+            android:text="Unknown Song"
+            android:layout_marginTop="20dp"
+            android:textColor="#FF5722"
             android:textSize="30dp"></TextView>
 
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="150dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginLeft="15dp">
 
 
-            <ImageView
+            <Button
                 android:layout_width="50dp"
                 android:layout_height="50dp"
+                android:id="@+id/notification_previous"
                 android:layout_marginVertical="0dp"
                 android:layout_marginRight="20dp"
-                android:src="@drawable/ic_skip_previous_black_24dp" />
+                android:clickable="true"
+                android:background="@drawable/ic_skip_previous_black_24dp" />
 
 
-            <ImageView
-                android:id="@+id/not_pause"
+            <Button
+                android:id="@+id/notification_pause"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
+                android:clickable="true"
                 android:layout_centerHorizontal="true"
                 android:layout_marginVertical="0dp"
                 android:layout_marginLeft="0dp"
-                android:src="@drawable/notification_pause" />
+                android:background="@drawable/notification_pause" />
 
 
-            <ImageView
+            <Button
                 android:layout_width="50dp"
                 android:layout_height="50dp"
+                android:clickable="true"
+                android:id="@+id/notification_next"
                 android:layout_marginVertical="0dp"
                 android:layout_marginLeft="30dp"
-                android:layout_toRightOf="@+id/not_pause"
-                android:src="@drawable/ic_skip_next_black_24dp" />
+                android:layout_toRightOf="@+id/notification_pause"
+                android:background="@drawable/ic_skip_next_black_24dp" />
 
         </LinearLayout>
 
